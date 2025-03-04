@@ -53,7 +53,7 @@ int main(){
     printf("Nome do país: %s.\n", nomepais);
     printf("População do país: %d habitantes.\n", populacao);
     printf("Área do país: %.2f km².\n", area);
-    printf("PIB: %.2f bilhões de reais.\n", pib);
+    printf("PIB: R$%.2f bilhões de reais.\n", pib);
     printf("Número de pontos turísticos: %d.\n", turisticos);
     printf("Densidade demográfica: %.2f hab/km².\n", densidade);
 
@@ -62,7 +62,7 @@ int main(){
     printf("Nome do país: %s.\n", nomepais1);
     printf("População do país: %d habitantes.\n", populacao1);
     printf("Área do país: %.2f km².\n", area1);
-    printf("PIB: %.2f bilhões de reais.\n", pib1);
+    printf("PIB: R$%.2f bilhões de reais.\n", pib1);
     printf("Número de pontos turísticos: %d.\n", turisticos1);
     printf("Densidade demográfica: %.2f hab/km².\n", densidade1);
 
@@ -110,10 +110,10 @@ int main(){
         //Comparação entre os PIBs, o maior PIB vencera.
         case 3:
         if(pib > pib1){
-            printf("%s possui um PIB de %.2f bilhões de reais, enquanto %s possui %.2f bilhões.\n", nomepais, pib, nomepais1, pib1);
+            printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais, pib, nomepais1, pib1);
             printf("A carta 1 (%s) ganhou!\n", nomepais);
         }else if (pib < pib1){
-            printf("%s possui um PIB de %.2f bilhões de reais, enquanto %s possui %.2f bilhões.\n", nomepais1, pib1, nomepais, pib);
+            printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais1, pib1, nomepais, pib);
             printf("A carta 2 (%s) ganhou!\n", nomepais1);
         }else {
             printf("Ambas cartas possuem um PIB igual, empate!\n");
