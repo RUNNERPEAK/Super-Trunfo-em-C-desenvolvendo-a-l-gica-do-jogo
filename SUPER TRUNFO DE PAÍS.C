@@ -66,6 +66,8 @@ int main(){
     printf("Número de pontos turísticos: %d.\n", turisticos1);
     printf("Densidade demográfica: %.2f hab/km².\n", densidade1);
 
+
+    //Estrutura do menu interativo com o loop do - while. E as opções disponíveis para se comparar.
     int opcao;
     do{
         printf("\nESCOLHA AQUILO QUE DESEJA COMPARAR\n");
@@ -73,11 +75,12 @@ int main(){
         printf("2. Comparar a área das cartas.\n");
         printf("3. Comparar o PIB das cartas.\n");
         printf("4. Comparar a quantia de pontos turísticos das cartas.\n");
-        printf("5. Comparar a densidade demográfica das cartas.\n\n");
+        printf("5. Comparar a densidade demográfica das cartas.\n");
+        printf("0. Sair do menu.\n\n");
         printf("Escolha uma opção: ");
-        printf("0. Sair do menu.");
         scanf("%d", &opcao);
 
+        //Comparação de população, onde o país que ser mais populoso vence.
         switch (opcao){
             case 1:
             if (populacao > populacao1){
@@ -91,6 +94,7 @@ int main(){
         }
         break;
 
+        //Comparação da área, onde a maior área vence.
         case 2:
         if(area > area1){
             printf("%s possui uma área de %.2f km², enquanto %s possui apenas %.2f km².\n", nomepais, area, nomepais1, area1);
@@ -103,6 +107,7 @@ int main(){
         }
         break;
 
+        //Comparação entre os PIBs, o maior PIB vencera.
         case 3:
         if(pib > pib1){
             printf("%s possui um PIB de %.2f bilhões de reais, enquanto %s possui %.2f bilhões.\n", nomepais, pib, nomepais1, pib1);
@@ -115,6 +120,7 @@ int main(){
         }
         break;
 
+        //Comparação entre a quantia de pontos turísticos, aquele que tiver mais, vence.
         case 4:
         if (turisticos > turisticos1){
             printf("%s possui %d pontos turísticos, enquanto %s possui apenas %d.\n", nomepais, turisticos, nomepais1, turisticos1);
@@ -127,6 +133,7 @@ int main(){
         }
         break;
 
+        //Comparação da densidade demográfica, a menor densidade vence ( lógica invertida ).
         case 5:
         if (densidade < densidade1){
             printf("%s possui %.2f hab/km², enquanto %s possui %.2f hab/km².\n", nomepais, densidade, nomepais1, densidade1);
@@ -139,15 +146,19 @@ int main(){
         }
         break;
 
+        //Opção para sair do menu interativo.
         case 0:
         printf("Saindo do menu interativo...");
         break;
 
+        //Caso o usuário digite um número que não está disponível nas opções.
         default :
         printf("Opção inválida, tente uma das opções disponíveis");
         break;
         
        } 
+
+       //Final do loop do - while quando o usuário digita 0.
     }while (opcao != 0);
 
 return 0;
