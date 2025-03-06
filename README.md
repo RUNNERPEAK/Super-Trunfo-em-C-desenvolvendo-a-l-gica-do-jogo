@@ -22,3 +22,66 @@ INSTRUÇÕES
     • Caso não esteja no GitHub irá ser necessário um compilador C para executar o programa ( como o MinGW ).
     • Caso esteja no GitHub é possível utilizar o espaço do Codespace para execução e depuração do código.
       
+EXEMPLO :
+Digite o nome do país.                                                                           
+Brasil
+Qual é a população que esse país possui?
+213000000
+Qual a área do país em km²?
+8515767
+Qual o PIB do país (em bilhões de reais)?
+1.45
+Quantos pontos turísticos tem nesse país?
+50
+
+Digite o nome do país.
+Argentina
+Qual é a população que esse país possui?
+45000000
+Qual a área do país em km²?
+2780400
+Qual o PIB do país (em bilhões de reais)?
+0.45
+Quantos pontos turísticos tem nesse país?
+30
+
+-> DADOS DO PRIMEIRO PAÍS CADASTRADO <-
+Nome do país: Brasil.
+População do país: 213000000 habitantes.
+Área do país: 8515767.00 km².
+PIB: R$1.45 bilhões de reais.
+Número de pontos turísticos: 50.
+Densidade demográfica: 25.01 hab/km².
+
+-> DADOS DO SEGUNDO PAÍS CADASTRADO <-
+Nome do país: Argentina.
+População do país: 45000000 habitantes.
+Área do país: 2780400.00 km².
+PIB: R$0.45 bilhões de reais.
+Número de pontos turísticos: 30.
+Densidade demográfica: 16.18 hab/km².
+
+ESCOLHA AQUILO QUE DESEJA COMPARAR
+1. Comparar a população entre as cartas.
+2. Comparar a área das cartas.
+3. Comparar o PIB das cartas.
+4. Comparar a quantia de pontos turísticos das cartas.
+5. Comparar a densidade demográfica das cartas.
+0. Sair do menu.
+
+Escolha o primeiro atributo para comparação: 1
+Escolha o segundo atributo para comparação: 4
+
+
+Brasil é mais populoso com 213000000 habitantes, enquanto Argentina possui 45000000 habitantes.
+A carta 1 (Brasil) ganhou!
+
+Brasil possui 50 pontos turísticos, enquanto Argentina possui apenas 30.
+A carta 1 (Brasil) ganhou!
+
+->Pontuações finais <-
+Pontuação do país Brasil: 213000050.000000 pontos.
+Pontuação do país Argentina: 45000030.000000 pontos.
+
+Brasil venceu!
+
