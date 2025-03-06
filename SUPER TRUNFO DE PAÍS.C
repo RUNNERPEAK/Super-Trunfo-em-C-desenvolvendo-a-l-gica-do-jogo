@@ -21,7 +21,7 @@ int main(){
     printf("Qual a área do país em km²?\n");
     scanf("%f", &area);
 
-    printf("Qual o PIB do país (em bilhões)?\n");
+    printf("Qual o PIB do país (em bilhões de reais)?\n");
     scanf("%f", &pib);
 
     printf("Quantos pontos turísticos tem nesse país?\n");
@@ -39,7 +39,7 @@ int main(){
     printf("Qual a área do país em km²?\n");
     scanf("%f", &area1);
 
-    printf("Qual o PIB do país (em bilhões)?\n");
+    printf("Qual o PIB do país (em bilhões de reais)?\n");
     scanf("%f", &pib1);
 
     printf("Quantos pontos turísticos tem nesse país?\n");
