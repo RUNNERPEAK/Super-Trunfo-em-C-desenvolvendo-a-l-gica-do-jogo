@@ -68,11 +68,12 @@ int main(){
 
 
     //Estrutura do menu interativo com o loop do - while. E as opções disponíveis para se comparar.
+    //Variáveis utilizadas para dar lógica ao código
     int opcao, opcao1;
     float pontuacaopais = 0 , pontuacaopais1 = 0;
 
 
-
+    //MENU INTERATIVO, ONDE É ESCOLIDO OQ SERÁ COMPARADO ( DOIS ATRIBUTOS SÃO ESCOLHIDO )
     do{
         printf("\nESCOLHA AQUILO QUE DESEJA COMPARAR\n");
         printf("1. Comparar a população entre as cartas.\n");
@@ -82,29 +83,140 @@ int main(){
         printf("5. Comparar a densidade demográfica das cartas.\n");
         printf("0. Sair do menu.\n\n");
         
-
+        //ESCOLHA DO PRIMEIRO ATRIBUTO PARA COMPARAÇÃO
         printf("Escolha o primeiro atributo para comparação: ");
         scanf("%d", &opcao);
 
+
+        //CASO ESCOLHA 0, ACABA O JOGO
         if(opcao == 0){
             printf("Saindo do menu.\n");
+            break;
         }
-        break;
-
-        
+                
+        ////ESCOLHA DO SEGUNDO ATRIBUTO PARA COMPARAÇÃO
         printf("Escolha o segundo atributo para comparação: ");
         scanf("%d", &opcao1);
 
+  
+        //CASO ESCOLHA 0 ACABA O JOGO
+        if(opcao == 0){
+            printf("Saindo do menu.\n");
+            break;
+        }
+
+        //CASO O JOGADOR ESCOLHA DUAS OPÇÕES IGUAIS, VAI PRECISAR ESCOLHER NOVAMENTE, DUAS DIFERENTES
         if(opcao == opcao1){
             printf("Escolha duas opções diferentes uma da outra.\n");
-
+            continue;
         }
+
 
         printf("\n");
 
 
-        //Comparação de população, onde o país que ser mais populoso vence.
+        //COMPARAÇÃO DA POPULAÇÃO, O PAÍS MAIS POPULOSO VENCE
         switch (opcao){
+            case 1:
+            if (populacao > populacao1){
+            printf("%s é mais populoso com %d habitantes, enquanto %s possui %d habitantes.\n", nomepais, populacao, nomepais1, populacao1);
+            printf("A carta 1 (%s) ganhou!\n", nomepais);   
+        }else if (populacao < populacao1){
+            printf("%s é mais populoso com %d habitantes, enquanto %s possui %d habitantes.\n", nomepais1, populacao1, nomepais, populacao);
+            printf("A carta 2 (%s) ganhou!\n", nomepais1);          
+        }else {
+            printf("Ambas cartas possuem a mesma população, empate!\n");
+        }
+        //O VALOR DE ''POPULACAO E POPULACAO1'' SERÃO SOMADOS A ''PONTUACAOPAIS E PONTUACAOPAIS1'' RESPECTIVAMENTE;
+        //ISSO VALE PARA TODOS OS OUTROS ATRIBUTOS, ASSIM NO FINAL TEREMOS TAMBÉM A SOMA DAS DUAS VARIÁVEIS ESCOLHIDAS PARA COMPARAÇÃO, E QUEM GANHOU A DISPUTA COM MAIOR PONTUAÇÃO
+        pontuacaopais += populacao;
+        pontuacaopais1 += populacao1;
+        break;
+
+
+
+        //COMPARAÇÃO DA ÁREA, ONDE A MAIOR ÁREA VENCE.
+        case 2:
+        if(area > area1){
+            printf("%s possui uma área de %.2f km², enquanto %s possui apenas %.2f km².\n", nomepais, area, nomepais1, area1);
+            printf("A carta 1 (%s) ganhou!\n", nomepais);             
+        }else if (area < area1){
+            printf("%s possui uma área de %.2f km², enquanto %s possui apenas %.2f km².\n", nomepais1, area1, nomepais, area);
+            printf("A carta 2 (%s) ganhou!\n", nomepais1);           
+        }else {
+            printf("Ambas cartas possuem a mesma área, empate!\n");
+        }
+        pontuacaopais += area;
+        pontuacaopais1 += area;
+        break;
+
+
+
+        //COMPARAÇÃO ENTRE OS PIBS, O MAIOR PIB VENCE.
+        case 3:
+        if(pib > pib1){
+            printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais, pib, nomepais1, pib1);
+            printf("A carta 1 (%s) ganhou!\n", nomepais);
+        }else if (pib < pib1){
+            printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais1, pib1, nomepais, pib);
+            printf("A carta 2 (%s) ganhou!\n", nomepais1);  
+        }else {
+            printf("Ambas cartas possuem um PIB igual, empate!\n");
+        }
+        pontuacaopais += pib;
+        pontuacaopais1 += pib1;
+        break;
+        
+
+
+        //COMPARAÇÃO ENTRE PONTOS TURÍSTICOS, AQUELE QUE TIVER MAIS, GANHA.
+        case 4:
+        if (turisticos > turisticos1){
+            printf("%s possui %d pontos turísticos, enquanto %s possui apenas %d.\n", nomepais, turisticos, nomepais1, turisticos1);
+            printf("A carta 1 (%s) ganhou!\n", nomepais);
+        }else if (turisticos < turisticos1){
+            printf("%s possui %d pontos turísticos, enquanto %s possui apenas %d.\n", nomepais1, turisticos1, nomepais, turisticos);
+            printf("A carta 2 (%s) ganhou!\n", nomepais1);
+        }else {
+            printf("Ambas cartas possuem o mesmo número de pontos turísticos, empate!\n");
+        }
+        pontuacaopais += turisticos;
+        pontuacaopais1 += turisticos1;
+        break;
+
+
+
+        //COMPARAÇÃO DA DENSIDADE DEMOGRÁFICA, A MENOR DENSIDADE VENCE ( LÓGICA INVERTIDA ).
+        case 5:
+        if (densidade < densidade1){
+            printf("%s possui %.2f hab/km², enquanto %s possui %.2f hab/km².\n", nomepais, densidade, nomepais1, densidade1);
+            printf("A carta 1 (%s) ganhou!\n", nomepais);
+        }else if (densidade > densidade1){
+            printf("%s possui %.2f hab/km², enquanto %s possui %.2f hab/km².\n", nomepais1, densidade1, nomepais, densidade);
+            printf("A carta 2 (%s) ganhou!\n", nomepais1);
+        }else {
+            printf("Ambas possuem uma densidade demográfica igual, empate!\n");
+        }
+        pontuacaopais += densidade;
+        pontuacaopais1 += densidade1;
+        break;
+
+
+
+        //CASO O USUÁRIO DIGITE UMA OPÇÃO QUE NÃO ESTÁ NO MENU
+        default :
+        printf("Opção inválida, tente uma das opções disponíveis.\n");
+        break;
+        
+       } 
+
+       
+       ////////////////////////////////////////////////////////////////////////////////////////
+       //COMPARAÇÃO DA SEGUNDA OPÇÃO ESCOLHIDA PELO USUÁRIO
+
+
+       //COMPARAÇÃO DA POPULAÇÃO, O PAÍS MAIS POPULOSO VENCE
+       switch (opcao1){
             case 1:
             if (populacao > populacao1){
             printf("%s é mais populoso com %d habitantes, enquanto %s possui %d habitantes.\n", nomepais, populacao, nomepais1, populacao1);
@@ -119,7 +231,9 @@ int main(){
         pontuacaopais1 += populacao1;
         break;
 
-        //Comparação da área, onde a maior área vence.
+
+
+        //COMPARAÇÃO DA ÁREA, ONDE A MAIOR ÁREA VENCE.
         case 2:
         if(area > area1){
             printf("%s possui uma área de %.2f km², enquanto %s possui apenas %.2f km².\n", nomepais, area, nomepais1, area1);
@@ -134,7 +248,9 @@ int main(){
         pontuacaopais1 += area;
         break;
 
-        //Comparação entre os PIBs, o maior PIB vencera.
+
+
+        //COMPARAÇÃO ENTRE OS PIBS, O MAIOR PIB VENCE.
         case 3:
         if(pib > pib1){
             printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais, pib, nomepais1, pib1);
@@ -149,7 +265,9 @@ int main(){
         pontuacaopais1 += pib1;
         break;
 
-        //Comparação entre a quantia de pontos turísticos, aquele que tiver mais, vence.
+
+
+        //COMPARAÇÃO ENTRE PONTOS TURÍSTICOS, AQUELE QUE TIVER MAIS, GANHA.
         case 4:
         if (turisticos > turisticos1){
             printf("%s possui %d pontos turísticos, enquanto %s possui apenas %d.\n", nomepais, turisticos, nomepais1, turisticos1);
@@ -164,97 +282,9 @@ int main(){
         pontuacaopais1 += turisticos1;
         break;
 
-        //Comparação da densidade demográfica, a menor densidade vence ( lógica invertida ).
-        case 5:
-        if (densidade < densidade1){
-            printf("%s possui %.2f hab/km², enquanto %s possui %.2f hab/km².\n", nomepais, densidade, nomepais1, densidade1);
-            printf("A carta 1 (%s) ganhou!\n", nomepais);
-        }else if (densidade > densidade1){
-            printf("%s possui %.2f hab/km², enquanto %s possui %.2f hab/km².\n", nomepais1, densidade1, nomepais, densidade);
-            printf("A carta 2 (%s) ganhou!\n", nomepais1);
-        }else {
-            printf("Ambas possuem uma densidade demográfica igual, empate!\n");
-        }
-        pontuacaopais += densidade;
-        pontuacaopais1 += densidade1;
-        break;
 
-        //Opção para sair do menu interativo.
-        case 0:
-        printf("Saindo do menu interativo...\n");
-        break;
 
-        //Caso o usuário digite um número que não está disponível nas opções.
-        default :
-        printf("Opção inválida, tente uma das opções disponíveis.\n");
-        break;
-        
-       } 
-
-       
-       ////////////////////////////////////////////////////////////////////////////////////////
-
-       switch (opcao1){
-        case 1:
-            if (populacao > populacao1){
-            printf("%s é mais populoso com %d habitantes, enquanto %s possui %d habitantes.\n", nomepais, populacao, nomepais1, populacao1);
-            printf("A carta 1 (%s) ganhou!\n", nomepais);   
-        }else if (populacao < populacao1){
-            printf("%s é mais populoso com %d habitantes, enquanto %s possui %d habitantes.\n", nomepais1, populacao1, nomepais, populacao);
-            printf("A carta 2 (%s) ganhou!\n", nomepais1);          
-        }else {
-            printf("Ambas cartas possuem a mesma população, empate!\n");
-        }
-        pontuacaopais += populacao;
-        pontuacaopais1 += populacao1;
-        break;
-
-        //Comparação da área, onde a maior área vence.
-        case 2:
-        if(area > area1){
-            printf("%s possui uma área de %.2f km², enquanto %s possui apenas %.2f km².\n", nomepais, area, nomepais1, area1);
-            printf("A carta 1 (%s) ganhou!\n", nomepais);             
-        }else if (area < area1){
-            printf("%s possui uma área de %.2f km², enquanto %s possui apenas %.2f km².\n", nomepais1, area1, nomepais, area);
-            printf("A carta 2 (%s) ganhou!\n", nomepais1);           
-        }else {
-            printf("Ambas cartas possuem a mesma área, empate!\n");
-        }
-        pontuacaopais += area;
-        pontuacaopais1 += area;
-        break;
-
-        //Comparação entre os PIBs, o maior PIB vencera.
-        case 3:
-        if(pib > pib1){
-            printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais, pib, nomepais1, pib1);
-            printf("A carta 1 (%s) ganhou!\n", nomepais);
-        }else if (pib < pib1){
-            printf("%s possui um PIB de R$%.2f bilhões de reais, enquanto %s possui R$%.2f bilhões.\n", nomepais1, pib1, nomepais, pib);
-            printf("A carta 2 (%s) ganhou!\n", nomepais1);  
-        }else {
-            printf("Ambas cartas possuem um PIB igual, empate!\n");
-        }
-        pontuacaopais += pib;
-        pontuacaopais1 += pib1;
-        break;
-
-        //Comparação entre a quantia de pontos turísticos, aquele que tiver mais, vence.
-        case 4:
-        if (turisticos > turisticos1){
-            printf("%s possui %d pontos turísticos, enquanto %s possui apenas %d.\n", nomepais, turisticos, nomepais1, turisticos1);
-            printf("A carta 1 (%s) ganhou!\n", nomepais);
-        }else if (turisticos < turisticos1){
-            printf("%s possui %d pontos turísticos, enquanto %s possui apenas %d.\n", nomepais1, turisticos1, nomepais, turisticos);
-            printf("A carta 2 (%s) ganhou!\n", nomepais1);
-        }else {
-            printf("Ambas cartas possuem o mesmo número de pontos turísticos, empate!\n");
-        }
-        pontuacaopais += turisticos;
-        pontuacaopais1 += turisticos1;
-        break;
-
-        //Comparação da densidade demográfica, a menor densidade vence ( lógica invertida ).
+        //COMPARAÇÃO DA DENSIDADE DEMOGRÁFICA, A MENOR DENSIDADE VENCE ( LÓGICA INVERTIDA ).
         case 5:
         if (densidade < densidade1){
             printf("%s possui %.2f hab/km², enquanto %s possui %.2f hab/km².\n", nomepais, densidade, nomepais1, densidade1);
@@ -270,12 +300,8 @@ int main(){
         break;
 
 
-        //Opção para sair do menu interativo.
-        case 0:
-        printf("Saindo do menu interativo...\n");
-        break;
 
-        //Caso o usuário digite um número que não está disponível nas opções.
+        //CASO O USUÁRIO DIGITE UMA OPÇÃO QUE NÃO ESTÁ NO MENU
         default :
         printf("Opção inválida, tente uma das opções disponíveis.\n");
         break;
@@ -283,10 +309,13 @@ int main(){
        } 
 
 
+       //PONTUAÇÃO DOS PAÍSES RESULTANTE DA SOMA DOS ATRIBUTOS ESCOLHIDOS NA COMPARAÇÃO
        printf("\n->Pontuações finais <-\n");
        printf("Pontuação do país %s: %f pontos.\n", nomepais, pontuacaopais);
        printf("Pontuação do país %s: %f pontos.\n", nomepais1, pontuacaopais1);
 
+
+       //EXIBIRÁ QUAL CARTA GANHOU COM MAIS PONTUAÇÃO!
        if(pontuacaopais > pontuacaopais1){
         printf("%s venceu!\n", nomepais);
        }else if(pontuacaopais < pontuacaopais1){
