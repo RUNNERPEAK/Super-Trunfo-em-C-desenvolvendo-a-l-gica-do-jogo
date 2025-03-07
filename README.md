@@ -23,42 +23,42 @@ INSTRUÇÕES
     • Caso esteja no GitHub é possível utilizar o espaço do Codespace para execução e depuração do código.
       
 EXEMPLO :
-Digite o nome do país.                                                                           
+Digite o nome do país.
 Brasil
-Qual é a população que esse país possui?
-213000000
+Qual é a populção que esse país possui?
+211000000
 Qual a área do país em km²?
 8515767
 Qual o PIB do país (em bilhões de reais)?
-1.45
+2200.0
 Quantos pontos turísticos tem nesse país?
-50
+1200
 
 Digite o nome do país.
 Argentina
-Qual é a população que esse país possui?
+Qual é a populção que esse país possui?
 45000000
 Qual a área do país em km²?
 2780400
 Qual o PIB do país (em bilhões de reais)?
-0.45
+600.0
 Quantos pontos turísticos tem nesse país?
-30
+800
 
 -> DADOS DO PRIMEIRO PAÍS CADASTRADO <-
 Nome do país: Brasil.
-População do país: 213000000 habitantes.
+População do país: 211000000 habitantes.
 Área do país: 8515767.00 km².
-PIB: R$1.45 bilhões de reais.
-Número de pontos turísticos: 50.
-Densidade demográfica: 25.01 hab/km².
+PIB: R$2200.00 bilhões de reais.
+Número de pontos turísticos: 1200.
+Densidade demográfica: 24.78 hab/km².
 
 -> DADOS DO SEGUNDO PAÍS CADASTRADO <-
 Nome do país: Argentina.
 População do país: 45000000 habitantes.
 Área do país: 2780400.00 km².
-PIB: R$0.45 bilhões de reais.
-Número de pontos turísticos: 30.
+PIB: R$600.00 bilhões de reais.
+Número de pontos turísticos: 800.
 Densidade demográfica: 16.18 hab/km².
 
 ESCOLHA AQUILO QUE DESEJA COMPARAR
@@ -70,18 +70,15 @@ ESCOLHA AQUILO QUE DESEJA COMPARAR
 0. Sair do menu.
 
 Escolha o primeiro atributo para comparação: 1
-Escolha o segundo atributo para comparação: 4
+Escolha o segundo atributo para comparação: 2
 
-
-Brasil é mais populoso com 213000000 habitantes, enquanto Argentina possui 45000000 habitantes.
+Brasil é mais populoso com 211000000 habitantes, enquanto Argentina possui 45000000 habitantes.
 A carta 1 (Brasil) ganhou!
-
-Brasil possui 50 pontos turísticos, enquanto Argentina possui apenas 30.
+Brasil possui uma área de 8515767.00 km², enquanto Argentina possui apenas 2780400.00 km².
 A carta 1 (Brasil) ganhou!
 
 ->Pontuações finais <-
-Pontuação do país Brasil: 213000050.000000 pontos.
-Pontuação do país Argentina: 45000030.000000 pontos.
-
+Pontuação do país Brasil: 211000000.000000 pontos.
+Pontuação do país Argentina: 45000000.000000 pontos.
 Brasil venceu!
 
